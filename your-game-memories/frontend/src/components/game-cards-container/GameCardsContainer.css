@@ -5,6 +5,7 @@
     gap: 1.25rem 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    max-width: 1425px;
 }
 
 @media only screen and (min-width: 992px) {
