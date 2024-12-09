@@ -30,7 +30,6 @@ function GameDetails(props) {
     return <p>Loading...</p>;
   }
 
-
   return (
     <div id="game-details">
       <img className="game-background-cover" src={game.background_image } />

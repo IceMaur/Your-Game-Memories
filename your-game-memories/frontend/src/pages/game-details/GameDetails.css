@@ -1,9 +1,13 @@
 #game-details {
+  position: relative;
   width: 100%;
   height: 55vh;
 }
 
 .game-background-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
