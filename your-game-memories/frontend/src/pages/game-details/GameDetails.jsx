@@ -33,6 +33,9 @@ function GameDetails(props) {
   return (
     <div id="game-details">
       <img className="game-background-cover" src={game.background_image } />
+      <div className='game-details-title-container'>
+        <h1>{game.name}</h1>
+      </div>
     </div>
   )
 }
