@@ -1,3 +1,7 @@
+.game-card-link {
+    text-decoration: none;
+}
+
 .game-card {
     display: grid;
     width: 100%;

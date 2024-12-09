@@ -1,0 +1,5 @@
+.game-background-cover {
+  width: 100%;
+  height: 55vh;
+  object-fit: cover;
+}
