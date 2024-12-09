@@ -1,0 +1,21 @@
+.game-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 1425px;
+}
+
+@media only screen and (min-width: 992px) {
+    .game-cards-container {
+        gap: 2rem 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .game-cards-container {
+        gap: 3rem 1.5rem;
+    }
+}
