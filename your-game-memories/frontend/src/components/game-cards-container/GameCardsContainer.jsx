@@ -33,7 +33,7 @@ function GameCardsContainer() {
   return (
     <div className='game-cards-container'>
       {games.results.map((game) => (
-        <GameCard name={game.name} imageUrl={game.background_image} />
+        <GameCard key={game.id} name={game.name} imageUrl={game.background_image} />
       ))}
     </div>
   )
