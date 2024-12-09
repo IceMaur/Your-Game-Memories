@@ -2,8 +2,9 @@ import './GameDetails.css'
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import GameBackground from '../../components/game-background/GameBackground';
 
-function GameDetails(props) {
+function GameDetails() {
   const [game, setGame] = useState(null);
   const [error, setError] = useState(null);
   let { id } = useParams();
@@ -31,12 +32,9 @@ function GameDetails(props) {
   }
 
   return (
-    <div id="game-details">
-      <img className="game-background-cover" src={game.background_image } />
-      <div className='game-details-title-container'>
-        <h1>{game.name}</h1>
-      </div>
-    </div>
+    <>
+      <GameBackground name={game.name} backgroundImage={game.background_image} />
+    </>
   )
 }
   
