@@ -34,6 +34,9 @@ function GameDetails() {
   return (
     <>
       <GameBackground name={game.name} backgroundImage={game.background_image} />
+      <div className='content'>
+        <div className='content-description' dangerouslySetInnerHTML={{ __html: game.description }} />
+      </div>
     </>
   )
 }

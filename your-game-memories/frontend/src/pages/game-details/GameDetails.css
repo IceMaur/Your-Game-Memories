@@ -1,0 +1,23 @@
+.content {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.content-description {
+  color: #fff;
+}
+
+@media only screen and (min-width: 992px) {
+  .content {
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .content {
+    margin-top: 3rem;
+  }
+}

@@ -16,8 +16,8 @@
 
 .game-title-container {
   position: absolute;
-  left: 0.5rem;
-  right: 0.5rem;
+  left: 0.75rem;
+  right: 0.75rem;
   bottom: 1rem;
   max-width: 500px;
   color: #fff;
