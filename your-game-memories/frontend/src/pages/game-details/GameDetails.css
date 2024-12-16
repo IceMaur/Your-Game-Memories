@@ -7,8 +7,16 @@
 }
 
 .content-description {
-  color: #fff;
 }
+
+@media only screen and (min-width: 768px) {
+  .content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
 
 @media only screen and (min-width: 992px) {
   .content {
@@ -19,5 +27,17 @@
 @media only screen and (min-width: 1200px) {
   .content {
     margin-top: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .content {
+    max-width: 1000px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .content {
+    max-width: 1100px;
   }
 }

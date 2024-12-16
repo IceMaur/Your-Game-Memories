@@ -15,6 +15,6 @@ nav li {
 }
 
 nav a {
-   color: #fff;
+   color: var(--main-text-color);
    text-decoration: none;
 }

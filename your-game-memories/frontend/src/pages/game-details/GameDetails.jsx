@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import GameBackground from '../../components/game-background/GameBackground';
+import GameActionCard from '../../components/game-action-card/GameActionCard';
 
 function GameDetails() {
   const [game, setGame] = useState(null);
@@ -33,9 +34,16 @@ function GameDetails() {
 
   return (
     <>
-      <GameBackground name={game.name} backgroundImage={game.background_image} />
+      <GameBackground name={game.name} backgroundImage={game.background_image_additional} />
       <div className='content'>
-        <div className='content-description' dangerouslySetInnerHTML={{ __html: game.description }} />
+        <div>
+          <section>
+            <div className='content-description' dangerouslySetInnerHTML={{ __html: game.description }} />
+          </section>
+        </div>
+        <aside>
+          <GameActionCard imageUrl={game.background_image} rating={game.rating} topRating={game.rating_top} />
+        </aside>
       </div>
     </>
   )
