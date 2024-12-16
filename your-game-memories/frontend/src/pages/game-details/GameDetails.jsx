@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import GameBackground from '../../components/game-background/GameBackground';
 import GameActionCard from '../../components/game-action-card/GameActionCard';
+import GameScreenshots from '../../components/game-screenshots/GameScreenshots';
 
 function GameDetails() {
   const [game, setGame] = useState(null);
@@ -40,6 +41,7 @@ function GameDetails() {
           <section>
             <div className='content-description' dangerouslySetInnerHTML={{ __html: game.description }} />
           </section>
+          <GameScreenshots id={id} />
         </div>
         <aside>
           <GameActionCard imageUrl={game.background_image} rating={game.rating} topRating={game.rating_top} />
