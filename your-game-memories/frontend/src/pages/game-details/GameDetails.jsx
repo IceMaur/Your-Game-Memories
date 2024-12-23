@@ -38,7 +38,7 @@ function GameDetails() {
     <>
       <GameBackground name={game.name} backgroundImage={game.background_image_additional} />
       <div className='content'>
-        <div>
+        <div className='content-main'>
           <section>
             <div className='content-description' dangerouslySetInnerHTML={{ __html: game.description }} />
           </section>
