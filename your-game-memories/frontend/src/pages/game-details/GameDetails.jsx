@@ -5,6 +5,7 @@ import axios from 'axios';
 import GameBackground from '../../components/game-background/GameBackground';
 import GameActionCard from '../../components/game-action-card/GameActionCard';
 import GameScreenshots from '../../components/game-screenshots/GameScreenshots';
+import Reactions from '../../components/reactions/Reactions';
 
 function GameDetails() {
   const [game, setGame] = useState(null);
@@ -42,6 +43,7 @@ function GameDetails() {
             <div className='content-description' dangerouslySetInnerHTML={{ __html: game.description }} />
           </section>
           <GameScreenshots id={id} />
+          <Reactions id={id} />
         </div>
         <aside>
           <GameActionCard imageUrl={game.background_image} rating={game.rating} topRating={game.rating_top} />
