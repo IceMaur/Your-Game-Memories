@@ -9,6 +9,9 @@ function Header() {
           <li>
             <NavLink to="/">Games</NavLink>
           </li>
+          <li>
+            <NavLink to="/login" className="login-button">Login</NavLink>
+          </li>
         </ul>
       </nav>
     </header>
