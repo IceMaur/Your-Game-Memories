@@ -1,0 +1,56 @@
+#game-background {
+  position: relative;
+  width: 100%;
+  height: 55vh;
+}
+
+.game-background-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+
+.game-title-container {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 1rem;
+  max-width: 500px;
+}
+
+@media only screen and (min-width: 768px) {
+  .game-title-container {
+    font-size: 1.125rem;
+    left: 1rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .game-title-container {
+    font-size: 1.5rem;
+    left: 15%;
+    bottom: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .game-title-container {
+    font-size: 1.75rem;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  #game-details {
+    height: 65vh;
+  }
+
+  .game-title-container {
+    font-size: 2rem;
+    left: 25% ;
+    bottom: 4rem;
+  }
+}

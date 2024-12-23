@@ -1,0 +1,50 @@
+.content {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.content-main {
+  max-width: 800px;
+}
+
+@media only screen and (min-width: 768px) {
+  .content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+
+@media only screen and (min-width: 992px) {
+  .content {
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .content {
+    margin-top: 3rem;
+  }
+
+  .content-description {
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .content {
+    gap: 2rem;
+    max-width: 1050px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .content {
+    gap: 3rem;
+    max-width: 1150px;
+  }
+}

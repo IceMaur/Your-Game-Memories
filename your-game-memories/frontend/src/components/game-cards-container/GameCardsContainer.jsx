@@ -11,7 +11,6 @@ function GameCardsContainer() {
     async function fetchGames() {
       try {
         const result = await axios.get(`https://api.rawg.io/api/games?key=${import.meta.env.VITE_API_KEY_GAMES}`);
-        console.log(result.data);
         setGames(result.data);
       } catch (e) {
         setError(e);
@@ -33,7 +32,7 @@ function GameCardsContainer() {
   return (
     <div className='game-cards-container'>
       {games.results.map((game) => (
-        <GameCard key={game.id} name={game.name} imageUrl={game.background_image} />
+        <GameCard key={game.id} id={game.id} name={game.name} imageUrl={game.background_image} />
       ))}
     </div>
   )

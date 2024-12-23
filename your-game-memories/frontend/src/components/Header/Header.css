@@ -1,5 +1,5 @@
 header {
-    background-color: #A88208;
+    background-color: var(--primary-color);
     margin-left: auto;
     padding: 2rem;
 }
@@ -15,6 +15,6 @@ nav li {
 }
 
 nav a {
-   color: #fff;
+   color: var(--main-text-color);
    text-decoration: none;
 }
