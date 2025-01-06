@@ -1,10 +1,10 @@
-import GameCardsContainer from "../../components/game-cards-container/GameCardsContainer";
+import AllGamesOverview from "../../components/all-games-overview/AllGamesOverview";
 import './Home.css'
 
 function Home() {
   return (
     <div id="home-page">
-      <GameCardsContainer />
+      <AllGamesOverview />
     </div>
   )
 }

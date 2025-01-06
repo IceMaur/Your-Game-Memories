@@ -22,7 +22,7 @@ function Reactions(props) {
   if (reactions) {
     return (
       <>
-        <h2 class="reactions-title">Reactions</h2>
+        <h2 className="reactions-title">Reactions</h2>
         {reactions.map((reaction, index) => (
           <article key={index} className="reaction">
             <div dangerouslySetInnerHTML={{ __html: reaction.text }}></div>
