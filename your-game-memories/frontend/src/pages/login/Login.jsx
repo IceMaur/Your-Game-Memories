@@ -26,15 +26,12 @@ function Login() {
   }
 
   return (
-    <FormCard title='Login'>
+    <FormCard title='Login' link='/register' linkName='Register' submitButtonText='Login' onSubmit={handleLogin} submitDisabled={!username || !password}>
       <form onSubmit={handleLogin}>
         <label htmlFor="username">Username</label>
         <input type="text" id="username" name="username" value={username} onChange={handleChangeUsername} required />
         <label htmlFor="password">Password</label>
         <input type="password" id="password" name="password" value={password} onChange={handleChangePassword} required />
-        <div className='login-buttons'>
-          <button type="submit" disabled={!username || !password}>Login</button>
-        </div>
       </form>
     </FormCard>
   )
