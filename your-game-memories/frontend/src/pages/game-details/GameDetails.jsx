@@ -6,6 +6,7 @@ import GameBackground from '../../components/game-background/GameBackground';
 import GameActionCard from '../../components/game-action-card/GameActionCard';
 import GameScreenshots from '../../components/game-screenshots/GameScreenshots';
 import Reactions from '../../components/reactions/Reactions';
+import GameSeries from '../../components/game-series/GameSeries';
 
 function GameDetails() {
   const [game, setGame] = useState(null);
@@ -24,7 +25,7 @@ function GameDetails() {
     }
 
     fetchGameDetails();
-  }, []); 
+  }, [id]); 
 
   if (error) {
     return <p>Error: {error.message}</p>;
@@ -49,6 +50,7 @@ function GameDetails() {
           <GameActionCard imageUrl={game.background_image} rating={game.rating} topRating={game.rating_top} />
         </aside>
       </div>
+      <GameSeries id={id} />
     </>
   )
 }
