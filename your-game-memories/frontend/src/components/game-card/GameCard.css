@@ -7,7 +7,12 @@
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 0.75rem;
-    overflow: hidden;   
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
 }
 
 .game-background-image {
