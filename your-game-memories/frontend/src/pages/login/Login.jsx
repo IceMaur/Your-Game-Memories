@@ -1,6 +1,7 @@
 import './login.css'
 import React, { useState } from 'react';
 import axios from 'axios';
+import FormCard from '../../components/form-card/FormCard';
 
 function Login() {
   const headers = {
@@ -19,14 +20,13 @@ function Login() {
     try {
       const result = await axios.post('https://api.datavortex.nl/yourgamememories/users/authenticate', { username, password }, { headers: headers })
       console.log(result);
-    } catch (e) {
-      console.error(e)
+    } catch (ex) {
+      console.error(ex)
     }
   }
 
   return (
-    <div className='login'>
-      <h1>Login</h1>
+    <FormCard title='Login'>
       <form onSubmit={handleLogin}>
         <label htmlFor="username">Username</label>
         <input type="text" id="username" name="username" value={username} onChange={handleChangeUsername} required />
@@ -36,7 +36,7 @@ function Login() {
           <button type="submit" disabled={!username || !password}>Login</button>
         </div>
       </form>
-    </div>
+    </FormCard>
   )
 }
   
