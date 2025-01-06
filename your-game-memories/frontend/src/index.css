@@ -10,8 +10,29 @@
 
   --main-text-color: #fff;
   --primary-color: #A88208;
+  --secondary-color: #30323F;
 }
 
 body {
   color: var(--main-text-color);
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  margin-top: 0rem;
 }
