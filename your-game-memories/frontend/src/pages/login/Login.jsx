@@ -3,11 +3,12 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import FormCard from '../../components/form-card/FormCard';
-import { TempContext } from '../../context/TempContext';
+import { TempContext, UserNameContext } from '../../context/TempContext';
 
 function Login() {
   const navigate = useNavigate();
   const { setUserJwtToken } = useContext(TempContext);
+  const { setUserName  } = useContext(UserNameContext);
 
   const headers = {
     'Content-Type': 'application/json',
@@ -26,6 +27,7 @@ function Login() {
 
     try {
       const result = await axios.post('https://api.datavortex.nl/yourgamememories/users/authenticate', { username, password }, { headers: headers });
+      setUserName(username);
       setUserJwtToken(result.data.jwt);
       navigate('/');
     } catch (ex) {
