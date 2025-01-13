@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 
 export const TempContext = createContext({userJwtToken: '', setUserJwtToken: (jwtToken) => {}});
-export const UserNameContext = createContext({userName: '', setUserName: (userName) => {}});
+export const UsernameContext = createContext({username: '', setUsername: (username) => {}});
 
 function TempContextProvider({ children }) {
   function getInitialState(contextName) {
@@ -10,21 +10,21 @@ function TempContextProvider({ children }) {
   }
 
   const [userJwtToken, setUserJwtToken] = useState(getInitialState('userJwtToken'));
-  const [userName, setUserName] = useState(getInitialState('userName'));
+  const [username, setUsername] = useState(getInitialState('username'));
 
   useEffect(() => {
     localStorage.setItem('userJwtToken', userJwtToken)
   }, [userJwtToken])
 
   useEffect(() => {
-    localStorage.setItem('userName', userName)
-  }, [userName])
+    localStorage.setItem('username', username)
+  }, [username])
 
   return (
     <TempContext.Provider value={{userJwtToken, setUserJwtToken}}>
-      <UserNameContext.Provider value={{userName, setUserName}}>
+      <UsernameContext.Provider value={{username, setUsername}}>
         { children }
-      </UserNameContext.Provider>
+      </UsernameContext.Provider>
     </TempContext.Provider>
   )
 }

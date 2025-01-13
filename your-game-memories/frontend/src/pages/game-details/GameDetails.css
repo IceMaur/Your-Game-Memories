@@ -10,14 +10,6 @@
   max-width: 800px;
 }
 
-@media only screen and (min-width: 768px) {
-  .content {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-  }
-}
-
 @media only screen and (min-width: 992px) {
   .content {
     margin-top: 2rem;
@@ -38,6 +30,12 @@
   .content {
     gap: 2rem;
     max-width: 1050px;
+  }
+
+  .content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
 }
 

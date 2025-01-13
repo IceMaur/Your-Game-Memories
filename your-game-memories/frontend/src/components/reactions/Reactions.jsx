@@ -9,7 +9,6 @@ function Reactions(props) {
     async function fetchReactions() {
       try {
         const result = await axios.get(`https://api.rawg.io/api/games/${props.id}/reddit?key=${import.meta.env.VITE_API_KEY_GAMES}`);
-        console.log(result);
         setReactions(result.data.results);
       } catch (e) {
         console.error(e);
