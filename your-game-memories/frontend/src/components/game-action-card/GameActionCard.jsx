@@ -34,7 +34,7 @@ function GameActionCard(props) {
 
   useEffect(() => {
     setAddMode(!info.includes(props.id));
-  }, [info]); 
+  }, [props.id, info]); 
 
   async function addGame() {
     const updatedInfo = [...info, props.id]; 

@@ -30,7 +30,7 @@ function GameScreenshots(props) {
     }
 
     fetchGameScreenshots();
-  }, []);
+  }, [props.id]);
 
   if (error) {
     return <p>Error: {error.message}</p>;
