@@ -47,7 +47,7 @@ function GameDetails() {
           <Reactions id={id} />
         </div>
         <aside>
-          <GameActionCard imageUrl={game.background_image} rating={game.rating} topRating={game.rating_top} />
+          <GameActionCard id={id} imageUrl={game.background_image} rating={game.rating} topRating={game.rating_top} />
         </aside>
       </div>
       <GameSeries id={id} />

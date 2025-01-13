@@ -3,20 +3,21 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import FormCard from '../../components/form-card/FormCard';
-import { TempContext } from '../../context/TempContext';
+import { TempContext, UsernameContext } from '../../context/TempContext';
 
 function Login() {
   const navigate = useNavigate();
   const { setUserJwtToken } = useContext(TempContext);
+  const { setUsername  } = useContext(UsernameContext);
 
   const headers = {
     'Content-Type': 'application/json',
     'X-Api-Key': import.meta.env.VITE_API_KEY_BACKEND
   }
 
-  const [username, setUsername] = useState("");
+  const [username, setUsernameInput] = useState("");
   const [password, setPassword] = useState("");
-  const handleChangeUsername = (e) => setUsername(e.target.value);
+  const handleChangeUsername = (e) => setUsernameInput(e.target.value);
   const handleChangePassword = (e) => setPassword(e.target.value);
 
   const [message, setMessage] = useState('');
@@ -26,8 +27,9 @@ function Login() {
 
     try {
       const result = await axios.post('https://api.datavortex.nl/yourgamememories/users/authenticate', { username, password }, { headers: headers });
+      setUsername(username);
       setUserJwtToken(result.data.jwt);
-      navigate('/');
+      navigate('/your-game-memories');
     } catch (ex) {
       setMessage(ex.response.data || 'Login failed. Please try again');
       console.error(ex)

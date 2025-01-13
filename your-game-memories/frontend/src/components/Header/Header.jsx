@@ -1,19 +1,28 @@
 import './Header.css'
 import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
-import { TempContext } from '../../context/TempContext';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { TempContext, UsernameContext } from '../../context/TempContext';
 
 function Header() {
+  const navigate = useNavigate();
   const { userJwtToken, setUserJwtToken } = useContext(TempContext);
+  const { setUsername } = useContext(UsernameContext);
 
   const handleLogout = () => {
     setUserJwtToken('');
+    setUsername('');
+    navigate('/');
   };
 
   return (
     <header>
       <nav>
         <ul>
+          {userJwtToken && (
+            <li>
+              <NavLink to="/your-game-memories">Memories</NavLink>
+            </li>
+          )}
           <li>
             <NavLink to="/">Games</NavLink>
           </li>
