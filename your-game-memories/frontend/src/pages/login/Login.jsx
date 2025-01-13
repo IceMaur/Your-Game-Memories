@@ -29,7 +29,7 @@ function Login() {
       const result = await axios.post('https://api.datavortex.nl/yourgamememories/users/authenticate', { username, password }, { headers: headers });
       setUsername(username);
       setUserJwtToken(result.data.jwt);
-      navigate('/');
+      navigate('/your-game-memories');
     } catch (ex) {
       setMessage(ex.response.data || 'Login failed. Please try again');
       console.error(ex)

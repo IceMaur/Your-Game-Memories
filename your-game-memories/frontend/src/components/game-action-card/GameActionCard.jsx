@@ -37,22 +37,23 @@ function GameActionCard(props) {
   }, [info]); 
 
   async function addGame() {
-    try {
-        const updatedInfo = [...info, props.id]; 
-        setInfo(updatedInfo);
-        const result = await axios.put(`https://api.datavortex.nl/yourgamememories/users/${username}`, { info: updatedInfo.toString() }, { headers: headers });
-    } catch (ex) {
-      console.error(ex)
-    }
+    const updatedInfo = [...info, props.id]; 
+    setInfo(updatedInfo);
+    updateUserInfo(updatedInfo);
   }
 
   async function removeGame() {
+    const updatedInfo = info.filter(item => item !== props.id); 
+    setInfo(updatedInfo);
+    updateUserInfo(updatedInfo);
+  }
+
+  async function updateUserInfo(updatedInfo) {
     try {
-        setInfo(i => i.filter(item => item !== props.id));
-        await axios.put(`https://api.datavortex.nl/yourgamememories/users/${username}`, { info: info.toString() }, { headers: headers });
-    } catch (ex) {
-      console.error(ex)
-    }
+      await axios.put(`https://api.datavortex.nl/yourgamememories/users/${username}`, { info: updatedInfo.toString() }, { headers: headers });
+  } catch (ex) {
+    console.error(ex)
+  }
   }
 
   return (
