@@ -8,8 +8,12 @@ function AllGamesOverview(props) {
 
   useEffect(() => {
     async function fetchGames() {
+      const extendedQueryParameters = props.searchText ? `&search=${props.searchText}` : '' 
+        + props.filterData.releaseDate ? `&dates=${props.filterData.releaseDate},2025-01-20` : '';
+
       try {
-        const result = await axios.get(`https://api.rawg.io/api/games?key=${import.meta.env.VITE_API_KEY_GAMES}${props.searchText ? `&search=${props.searchText}` : ''}`);
+        const result = await axios.get(`https://api.rawg.io/api/games?key=${import.meta.env.VITE_API_KEY_GAMES}${extendedQueryParameters}`);
+        console.log(result.data);
         setGames(result.data);
       } catch (e) {
         setError(e);
@@ -18,7 +22,7 @@ function AllGamesOverview(props) {
     }
 
     fetchGames();
-  }, [props.searchText]); 
+  }, [props.searchText, props.filterData]); 
 
   if (error) {
     return <p>Error: {error.message}</p>;
