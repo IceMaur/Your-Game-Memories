@@ -19,7 +19,7 @@ GameSeries(props) {
     }
 
     fetchGames();
-  }, []);
+  }, [props.id]);
 
   if (!games) {
     return <p>Loading...</p>;
