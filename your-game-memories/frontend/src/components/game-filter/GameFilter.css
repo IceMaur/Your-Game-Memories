@@ -20,4 +20,8 @@
   .game-filter-title {
     font-size: 1.75rem;
   }
+
+  .game-filter {
+    max-width: 400px;
+  }
 }

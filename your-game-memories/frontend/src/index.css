@@ -17,6 +17,7 @@ body {
   color: var(--main-text-color);
 }
 
+select,
 input {
   width: 100%;
   padding: 12px 20px;

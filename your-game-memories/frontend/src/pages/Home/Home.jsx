@@ -9,6 +9,10 @@ function Home() {
 
     const [filterData, setFilterData] = useState({
       releaseDate: '',
+      platform: 0,
+      tag: 0,
+      genre: 0,
+      publisher: 0,
     });
 
     const handleChange = (e) => {
